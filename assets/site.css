@@ -293,34 +293,61 @@ a {
   font-size: 16px;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.marquee {
   margin-top: 72px;
-  border: 1px solid var(--line-strong);
+  overflow: hidden;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
 }
 
-.stat {
-  display: grid;
-  gap: 6px;
-  padding: 24px;
-}
-
-.stat + .stat {
-  border-left: 1px solid var(--line-strong);
-}
-
-.stat-value {
-  font-size: clamp(28px, 4vw, 44px);
+.marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 28px;
+  padding: 18px 0;
+  font-size: clamp(18px, 2.4vw, 28px);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  animation: marquee 38s linear infinite;
 }
 
-.stat-label {
-  color: var(--fg-dim);
+.marquee-star {
+  color: var(--muted);
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  margin-top: 64px;
+}
+
+.principle {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.principle-index {
+  color: var(--muted);
   font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.principle-title {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-strong);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.principle-text {
+  margin: 0;
+  color: var(--fg-dim);
 }
 
 .view-head {
@@ -556,6 +583,12 @@ a {
   }
 }
 
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes pulse {
   50% {
     opacity: 0.3;
@@ -579,16 +612,9 @@ a {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .stat:nth-child(3) {
-    border-left: 0;
-  }
-
-  .stat:nth-child(n + 3) {
-    border-top: 1px solid var(--line-strong);
+  .principles {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
   }
 }
 
