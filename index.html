@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types 'none'">
+    <meta name="referrer" content="no-referrer">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="FrameBuffer Studio - open-source libraries and tools for Roblox. Home of Bloom, a low-level graphics library for EditableImage.">
+    <title>FrameBuffer Studio</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/site.css">
+    <script type="module" src="./assets/site.js"></script>
+  </head>
+  <body>
+    <canvas class="backdrop" id="backdrop" aria-hidden="true"></canvas>
+
+    <header class="topbar">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true">▚</span>
+        <span>FrameBuffer<span class="brand-dim">/studio</span></span>
+      </a>
+      <nav class="topnav" aria-label="Sections">
+        <a href="#projects" data-i18n="nav.projects">projects</a>
+        <a href="#team" data-i18n="nav.team">team</a>
+        <a href="#support" data-i18n="nav.support">support</a>
+        <a href="https://github.com/FrameBuffer-Studio" target="_blank" rel="noopener noreferrer">github ↗</a>
+        <button class="lang" id="lang" type="button" aria-label="Switch language"><span data-lang="ru">RU</span><span class="lang-sep">/</span><span data-lang="en">EN</span></button>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <p class="prompt"><span class="prompt-user">framebuffer</span><span class="prompt-dim">@studio:~$</span> <span data-i18n="hero.command">whoami</span><span class="cursor" aria-hidden="true"></span></p>
+        <h1 class="title">FrameBuffer<br><span class="title-dim">Studio</span></h1>
+        <p class="lead" data-i18n="hero.lead">Open-source libraries and tools for Roblox developers.</p>
+        <div class="actions">
+          <a class="button primary" href="./Bloom/" data-i18n="hero.docs">Bloom documentation →</a>
+          <a class="button" href="https://github.com/FrameBuffer-Studio" target="_blank" rel="noopener noreferrer" data-i18n="hero.github">GitHub organization ↗</a>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <h2 class="section-title" id="projects-title"><span class="section-index">01</span><span data-i18n="projects.title">Projects</span></h2>
+        <div class="grid">
+          <article class="card featured">
+            <div class="card-head">
+              <span class="card-name">Bloom</span>
+              <span class="badge">Luau</span>
+            </div>
+            <p class="card-tagline">Blossom with possibilities.</p>
+            <p class="card-text" data-i18n="bloom.text">Low-level graphics library for Roblox: draws pixels, lines, shapes, textures, text and CPU shaders on EditableImage through a fast buffer.</p>
+            <ul class="tags">
+              <li>EditableImage</li>
+              <li>buffer</li>
+              <li>--!native</li>
+              <li>TTF</li>
+            </ul>
+            <div class="card-links">
+              <a href="./Bloom/" data-i18n="bloom.docs">Documentation</a>
+              <a href="https://github.com/FrameBuffer-Studio/Bloom" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="./Bloom/#/first-picture" data-i18n="bloom.start">Quick start</a>
+            </div>
+          </article>
+          <article class="card placeholder">
+            <div class="card-head">
+              <span class="card-name">???</span>
+              <span class="badge muted" data-i18n="soon.badge">soon</span>
+            </div>
+            <p class="card-text" data-i18n="soon.text">The next project is in the works. Follow the organization on GitHub to see it first.</p>
+            <div class="card-links">
+              <a href="https://github.com/FrameBuffer-Studio" target="_blank" rel="noopener noreferrer" data-i18n="soon.follow">Follow on GitHub ↗</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="team" aria-labelledby="team-title">
+        <h2 class="section-title" id="team-title"><span class="section-index">02</span><span data-i18n="team.title">Team</span></h2>
+        <div class="grid team">
+          <a class="person" href="https://github.com/TheExeDEV" target="_blank" rel="noopener noreferrer">
+            <span class="person-name">TheExe</span>
+            <span class="person-role" data-i18n="team.owner">Studio owner</span>
+            <span class="person-link">github.com/TheExeDEV ↗</span>
+          </a>
+          <a class="person" href="https://github.com/onedps" target="_blank" rel="noopener noreferrer">
+            <span class="person-name">Onedps</span>
+            <span class="person-role" data-i18n="team.creator">Creator of Bloom</span>
+            <span class="person-link">github.com/onedps ↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="support" aria-labelledby="support-title">
+        <h2 class="section-title" id="support-title"><span class="section-index">03</span><span data-i18n="support.title">Support</span></h2>
+        <div class="support">
+          <p class="card-text" data-i18n="support.text">Our libraries are free and open source. If they help you, you can support the studio.</p>
+          <a class="button primary" href="https://donatex.gg/donate/fbstd" target="_blank" rel="noopener noreferrer" data-i18n="support.donate">♥ Donate via DonateX ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 FrameBuffer Studio</span>
+      <span class="footer-links">
+        <a href="https://github.com/FrameBuffer-Studio" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="./Bloom/">Bloom</a>
+        <a href="https://donatex.gg/donate/fbstd" target="_blank" rel="noopener noreferrer">DonateX</a>
+      </span>
+    </footer>
+  </body>
+</html>
