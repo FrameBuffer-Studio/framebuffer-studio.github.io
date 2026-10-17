@@ -37,32 +37,32 @@
     <main class="page">
       <section class="view" id="view-home" role="tabpanel" data-view="home">
         <div class="hero">
-          <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="home.eyebrow">open-source studio for roblox</span></p>
-          <h1 class="display">Frame<br>Buffer<span class="display-dot">.</span></h1>
+          <p class="eyebrow" data-reveal><span class="dot" aria-hidden="true"></span><span data-i18n="home.eyebrow">open-source studio for roblox</span></p>
+          <h1 class="display" data-reveal="mask"><span class="line"><span>Frame</span></span><span class="line"><span>Buffer<span class="display-dot">.</span></span></span></h1>
           <div class="hero-row">
-            <p class="lead" data-i18n="home.lead">We build low-level libraries and tools that make Roblox do things it was never meant to do.</p>
-            <div class="hero-actions">
+            <p class="lead" data-reveal data-i18n="home.lead">We build low-level libraries and tools that make Roblox do things it was never meant to do.</p>
+            <div class="hero-actions" data-reveal>
               <a class="button solid" href="#/products" data-i18n="home.products">See products →</a>
             </div>
           </div>
         </div>
 
-        <div class="marquee" aria-hidden="true">
+        <div class="marquee" data-reveal aria-hidden="true">
           <div class="marquee-track"><span>EditableImage</span><span class="marquee-star" aria-hidden="true">✦</span><span>buffer</span><span class="marquee-star" aria-hidden="true">✦</span><span>Luau</span><span class="marquee-star" aria-hidden="true">✦</span><span>--!native</span><span class="marquee-star" aria-hidden="true">✦</span><span>pixels</span><span class="marquee-star" aria-hidden="true">✦</span><span>shaders</span><span class="marquee-star" aria-hidden="true">✦</span><span>fonts</span><span class="marquee-star" aria-hidden="true">✦</span><span>open source</span><span class="marquee-star" aria-hidden="true">✦</span><span>Roblox</span><span class="marquee-star" aria-hidden="true">✦</span><span>EditableImage</span><span class="marquee-star" aria-hidden="true">✦</span><span>buffer</span><span class="marquee-star" aria-hidden="true">✦</span><span>Luau</span><span class="marquee-star" aria-hidden="true">✦</span><span>--!native</span><span class="marquee-star" aria-hidden="true">✦</span><span>pixels</span><span class="marquee-star" aria-hidden="true">✦</span><span>shaders</span><span class="marquee-star" aria-hidden="true">✦</span><span>fonts</span><span class="marquee-star" aria-hidden="true">✦</span><span>open source</span><span class="marquee-star" aria-hidden="true">✦</span><span>Roblox</span><span class="marquee-star" aria-hidden="true">✦</span></div>
         </div>
 
         <div class="principles">
-          <div class="principle">
+          <div class="principle" data-reveal>
             <span class="principle-index">01</span>
             <h3 class="principle-title" data-i18n="principle.low.title">Low-level</h3>
             <p class="principle-text" data-i18n="principle.low.text">We work directly with pixels and buffers. No hidden magic, full control.</p>
           </div>
-          <div class="principle">
+          <div class="principle" data-reveal>
             <span class="principle-index">02</span>
             <h3 class="principle-title" data-i18n="principle.fast.title">Fast</h3>
             <p class="principle-text" data-i18n="principle.fast.text">Native Luau, strict types and careful memory use in every line.</p>
           </div>
-          <div class="principle">
+          <div class="principle" data-reveal>
             <span class="principle-index">03</span>
             <h3 class="principle-title" data-i18n="principle.open.title">Open</h3>
             <p class="principle-text" data-i18n="principle.open.text">Free, open source and documented so simply that anyone can start.</p>
@@ -72,12 +72,12 @@
 
       <section class="view" id="view-products" role="tabpanel" data-view="products" hidden>
         <header class="view-head">
-          <p class="eyebrow"><span class="index">01</span><span data-i18n="products.eyebrow">everything we ship</span></p>
-          <h2 class="heading" data-i18n="products.title">Products</h2>
+          <p class="eyebrow" data-reveal><span class="index">01</span><span data-i18n="products.eyebrow">everything we ship</span></p>
+          <h2 class="heading" data-reveal="mask"><span class="line"><span data-i18n="products.title">Products</span></span></h2>
         </header>
 
         <div class="products">
-          <article class="product">
+          <article class="product" data-reveal>
             <div class="product-top">
               <span class="product-number">P-001</span>
               <span class="status live" data-i18n="status.live">released</span>
@@ -86,7 +86,7 @@
             <p class="product-tagline">Blossom with possibilities.</p>
             <p class="product-text" data-i18n="bloom.text">Low-level graphics library for Roblox: draws pixels, lines, shapes, textures, text and CPU shaders on EditableImage through a fast buffer.</p>
             <dl class="specs">
-              <div><dt data-i18n="spec.language">language</dt><dd>Luau · --!strict · --!native</dd></div>
+              <div><dt data-i18n="spec.language">language</dt><dd>Luau</dd></div>
               <div><dt data-i18n="spec.target">target</dt><dd>EditableImage + buffer</dd></div>
               <div><dt data-i18n="spec.features">features</dt><dd data-i18n="bloom.features">tiles, shapes, textures, TTF fonts, CPU shaders, scheduler</dd></div>
               <div><dt data-i18n="spec.license">license</dt><dd>Apache-2.0</dd></div>
@@ -98,7 +98,7 @@
             </div>
           </article>
 
-          <article class="product upcoming">
+          <article class="product upcoming" data-reveal>
             <div class="product-top">
               <span class="product-number">P-002</span>
               <span class="status" data-i18n="status.soon">in development</span>
@@ -114,17 +114,17 @@
 
       <section class="view" id="view-team" role="tabpanel" data-view="team" hidden>
         <header class="view-head">
-          <p class="eyebrow"><span class="index">02</span><span data-i18n="team.eyebrow">people behind the studio</span></p>
-          <h2 class="heading" data-i18n="team.title">Team</h2>
+          <p class="eyebrow" data-reveal><span class="index">02</span><span data-i18n="team.eyebrow">people behind the studio</span></p>
+          <h2 class="heading" data-reveal="mask"><span class="line"><span data-i18n="team.title">Team</span></span></h2>
         </header>
         <div class="people">
-          <a class="person" href="https://github.com/TheExeDEV" target="_blank" rel="noopener noreferrer">
+          <a class="person" data-reveal href="https://github.com/TheExeDEV" target="_blank" rel="noopener noreferrer">
             <span class="person-initial" aria-hidden="true">T</span>
             <span class="person-name">TheExe</span>
             <span class="person-role" data-i18n="team.owner">Studio owner</span>
             <span class="person-link">github.com/TheExeDEV ↗</span>
           </a>
-          <a class="person" href="https://github.com/onedps" target="_blank" rel="noopener noreferrer">
+          <a class="person" data-reveal href="https://github.com/onedps" target="_blank" rel="noopener noreferrer">
             <span class="person-initial" aria-hidden="true">O</span>
             <span class="person-name">Onedps</span>
             <span class="person-role" data-i18n="team.creator">Creator of Bloom</span>
@@ -135,12 +135,12 @@
 
       <section class="view" id="view-support" role="tabpanel" data-view="support" hidden>
         <header class="view-head">
-          <p class="eyebrow"><span class="index">03</span><span data-i18n="support.eyebrow">keep it free</span></p>
-          <h2 class="heading" data-i18n="support.title">Support</h2>
+          <p class="eyebrow" data-reveal><span class="index">03</span><span data-i18n="support.eyebrow">keep it free</span></p>
+          <h2 class="heading" data-reveal="mask"><span class="line"><span data-i18n="support.title">Support</span></span></h2>
         </header>
-        <div class="support">
-          <p class="lead" data-i18n="support.text">Our libraries are free and open source. If they help you, you can support the studio.</p>
-          <a class="button solid big" href="https://donatex.gg/donate/fbstd" target="_blank" rel="noopener noreferrer" data-i18n="support.donate">♥ Donate via DonateX ↗</a>
+        <div class="support" data-reveal>
+          <p class="lead" data-reveal data-i18n="support.text">Our libraries are free and open source. If they help you, you can support the studio.</p>
+          <a class="button solid big" data-reveal href="https://donatex.gg/donate/fbstd" target="_blank" rel="noopener noreferrer" data-i18n="support.donate">♥ Donate via DonateX ↗</a>
         </div>
       </section>
     </main>

@@ -125,10 +125,37 @@ function currentView() {
   return VIEWS.includes(name) ? name : "home";
 }
 
+let pending = [];
+
+function revealVisible() {
+  const limit = window.innerHeight * 0.92;
+  let batch = 0;
+  pending = pending.filter((item) => {
+    if (item.getBoundingClientRect().top >= limit) {
+      return true;
+    }
+    item.style.setProperty("--order", String(Math.min(batch, 6)));
+    item.classList.add("in");
+    batch += 1;
+    return false;
+  });
+}
+
+function revealView(panel) {
+  pending = [...panel.querySelectorAll("[data-reveal]")];
+  for (const item of pending) {
+    item.classList.remove("in");
+  }
+  window.setTimeout(revealVisible, 60);
+}
+
 function showView() {
   const active = currentView();
   for (const panel of document.querySelectorAll("section.view")) {
     panel.hidden = panel.dataset.view !== active;
+    if (!panel.hidden) {
+      revealView(panel);
+    }
   }
   for (const tab of document.querySelectorAll(".tab")) {
     tab.setAttribute("aria-selected", String(tab.dataset.view === active));
@@ -139,3 +166,5 @@ function showView() {
 setupLanguage();
 showView();
 window.addEventListener("hashchange", showView);
+window.addEventListener("scroll", revealVisible, { passive: true });
+window.addEventListener("resize", revealVisible);

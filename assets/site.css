@@ -194,7 +194,51 @@ a {
 
 .view {
   padding: clamp(48px, 10vh, 120px) 0 64px;
-  animation: rise 500ms var(--ease) both;
+}
+
+.page [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  filter: blur(8px);
+  transition:
+    opacity 800ms var(--ease) calc(var(--order, 0) * 90ms),
+    transform 800ms var(--ease) calc(var(--order, 0) * 90ms),
+    filter 800ms var(--ease) calc(var(--order, 0) * 90ms),
+    background 300ms var(--ease),
+    color 300ms var(--ease),
+    border-color 200ms var(--ease);
+}
+
+.page [data-reveal].in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.page [data-reveal="mask"] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.line > span {
+  display: inline-block;
+  transform: translateY(110%) skewY(6deg);
+  transition: transform 1000ms var(--ease);
+}
+
+.line + .line > span {
+  transition-delay: 120ms;
+}
+
+.page [data-reveal="mask"].in .line > span {
+  transform: none;
 }
 
 .eyebrow {
@@ -572,17 +616,6 @@ a {
   color: var(--white);
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @keyframes marquee {
   to {
     transform: translateX(-50%);
@@ -619,7 +652,6 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .view,
   .dot,
   .status.live::before {
     animation: none;
