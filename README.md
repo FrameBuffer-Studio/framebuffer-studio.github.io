@@ -45,10 +45,10 @@
 
 ### Проверка
 
-Рядом лежит [`studio.schema.json`](studio.schema.json): VS Code по нему подсказывает поля и подчёркивает ошибки прямо в `studio.json`. Полную проверку делает backend. Её запускает приватный репозиторий `site-servers`: `npm run validate:remote` проверяет `studio.json` прямо на GitHub и показывает точный путь к ошибке, например `studio.json: products[1].status must be one of: released, development, archived`.
+Рядом лежит [`studio.schema.json`](studio.schema.json): VS Code по нему подсказывает поля и подчёркивает ошибки прямо в `studio.json`. Полную проверку делает backend. Её запускает приватный репозиторий `studio-server`: `npm run validate:remote` проверяет `studio.json` прямо на GitHub и показывает точный путь к ошибке, например `studio.json: products[1].status must be one of: released, development, archived`.
 
 ## Backend
 
-Код сервера лежит в отдельном приватном репозитории `FrameBuffer-Studio/site-servers`. Сервер не хранит копию сайта: при сборке он клонирует этот репозиторий, а `studio.json` может подтягивать с GitHub на лету. Поэтому содержимое сайта по-прежнему правится только здесь.
+Код сервера лежит в отдельном приватном репозитории `FrameBuffer-Studio/studio-server`. Сервер не хранит копию сайта: при сборке он клонирует этот репозиторий, а `studio.json` может подтягивать с GitHub на лету. Поэтому содержимое сайта по-прежнему правится только здесь.
 
-Тот же CI каждый час проверяет `studio.json` из этого репозитория. Если в нём ошибка, проверка во вкладке Actions репозитория `site-servers` станет красной.
+Тот же CI каждый час проверяет `studio.json` из этого репозитория. Если в нём ошибка, проверка во вкладке Actions репозитория `studio-server` станет красной.
