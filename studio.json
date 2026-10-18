@@ -1,0 +1,120 @@
+{
+  "$schema": "./studio.schema.json",
+  "brand": {
+    "name": "FrameBuffer",
+    "suffix": "studio",
+    "year": 2026
+  },
+  "languages": ["en", "ru"],
+  "defaultLanguage": "en",
+  "links": {
+    "github": "https://github.com/FrameBuffer-Studio",
+    "donate": {
+      "label": "DonateX",
+      "url": "https://donatex.gg/donate/fbstd"
+    }
+  },
+  "ui": {
+    "tab.home": { "en": "home", "ru": "главная" },
+    "tab.products": { "en": "products", "ru": "продукты" },
+    "tab.team": { "en": "team", "ru": "команда" },
+    "tab.support": { "en": "support", "ru": "поддержать" },
+    "home.eyebrow": { "en": "open-source studio for roblox", "ru": "open-source студия для roblox" },
+    "home.lead": {
+      "en": "We build low-level libraries and tools that make Roblox do things it was never meant to do.",
+      "ru": "Делаем низкоуровневые библиотеки и инструменты, которые заставляют Roblox делать то, для чего он не был создан."
+    },
+    "home.products": { "en": "See products →", "ru": "Смотреть продукты →" },
+    "products.eyebrow": { "en": "everything we ship", "ru": "всё, что мы выпускаем" },
+    "products.title": { "en": "Products", "ru": "Продукты" },
+    "status.released": { "en": "released", "ru": "выпущен" },
+    "status.development": { "en": "in development", "ru": "в разработке" },
+    "status.archived": { "en": "archived", "ru": "в архиве" },
+    "team.eyebrow": { "en": "people behind the studio", "ru": "люди за студией" },
+    "team.title": { "en": "Team", "ru": "Команда" },
+    "support.eyebrow": { "en": "keep it free", "ru": "чтобы всё оставалось бесплатным" },
+    "support.title": { "en": "Support", "ru": "Поддержать" },
+    "support.text": {
+      "en": "Our libraries are free and open source. If they help you, you can support the studio.",
+      "ru": "Наши библиотеки бесплатные и с открытым кодом. Если они тебе помогают, можно поддержать студию."
+    },
+    "support.donate": { "en": "♥ Donate via {label} ↗", "ru": "♥ Поддержать через {label} ↗" }
+  },
+  "marquee": ["EditableImage", "buffer", "Luau", "--!native", "pixels", "shaders", "fonts", "open source", "Roblox"],
+  "principles": [
+    {
+      "title": { "en": "Low-level", "ru": "Низкоуровнево" },
+      "text": {
+        "en": "We work directly with pixels and buffers. No hidden magic, full control.",
+        "ru": "Работаем напрямую с пикселями и буферами. Никакой скрытой магии, полный контроль."
+      }
+    },
+    {
+      "title": { "en": "Fast", "ru": "Быстро" },
+      "text": {
+        "en": "Native Luau, strict types and careful memory use in every line.",
+        "ru": "Нативный Luau, строгие типы и бережная работа с памятью в каждой строчке."
+      }
+    },
+    {
+      "title": { "en": "Open", "ru": "Открыто" },
+      "text": {
+        "en": "Free, open source and documented so simply that anyone can start.",
+        "ru": "Бесплатно, с открытым кодом и с документацией, понятной любому."
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": "bloom",
+      "name": "Bloom",
+      "status": "released",
+      "tagline": "Blossom with possibilities.",
+      "description": {
+        "en": "Low-level graphics library for Roblox: draws pixels, lines, shapes, textures, text and CPU shaders on EditableImage through a fast buffer.",
+        "ru": "Низкоуровневая графическая библиотека для Roblox: рисует пиксели, линии, фигуры, текстуры, текст и CPU-шейдеры на EditableImage через быстрый buffer."
+      },
+      "specs": [
+        { "label": { "en": "language", "ru": "язык" }, "value": "Luau" },
+        { "label": { "en": "target", "ru": "основа" }, "value": "EditableImage + buffer" },
+        {
+          "label": { "en": "features", "ru": "умеет" },
+          "value": {
+            "en": "tiles, shapes, textures, TTF fonts, CPU shaders, scheduler",
+            "ru": "тайлы, фигуры, текстуры, TTF-шрифты, CPU-шейдеры, планировщик"
+          }
+        },
+        { "label": { "en": "license", "ru": "лицензия" }, "value": "Apache-2.0" }
+      ],
+      "links": [
+        { "label": { "en": "Documentation →", "ru": "Документация →" }, "url": "./Bloom/", "primary": true },
+        { "label": { "en": "Quick start", "ru": "Быстрый старт" }, "url": "./Bloom/#/first-picture" },
+        { "label": "GitHub ↗", "url": "https://github.com/FrameBuffer-Studio/Bloom" }
+      ]
+    },
+    {
+      "id": "next",
+      "name": "???",
+      "status": "development",
+      "description": {
+        "en": "The next product is in the works. Follow the organization on GitHub to see it first.",
+        "ru": "Следующий продукт уже в работе. Подпишись на организацию на GitHub, чтобы увидеть его первым."
+      },
+      "links": [
+        { "label": { "en": "Follow on GitHub ↗", "ru": "Подписаться на GitHub ↗" }, "url": "https://github.com/FrameBuffer-Studio" }
+      ]
+    }
+  ],
+  "team": [
+    {
+      "name": "TheExe",
+      "role": { "en": "Studio owner", "ru": "Владелец студии" },
+      "url": "https://github.com/TheExeDEV"
+    },
+    {
+      "name": "Onedps",
+      "role": { "en": "Creator of Bloom", "ru": "Автор Bloom" },
+      "url": "https://github.com/onedps"
+    }
+  ]
+}

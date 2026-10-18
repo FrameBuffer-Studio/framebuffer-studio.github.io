@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FrameBuffer Studio site configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["brand", "languages", "defaultLanguage", "links", "ui", "products", "team"],
+  "$defs": {
+    "text": {
+      "description": "A plain string, or one string per language.",
+      "oneOf": [
+        { "type": "string", "maxLength": 600 },
+        {
+          "type": "object",
+          "additionalProperties": { "type": "string", "maxLength": 600 },
+          "minProperties": 1
+        }
+      ]
+    },
+    "url": {
+      "description": "https:// address, or a relative path that starts with ./ or #/",
+      "type": "string",
+      "pattern": "^(https://|\\./|#/)",
+      "maxLength": 300
+    },
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "$ref": "#/$defs/text" },
+        "url": { "$ref": "#/$defs/url" },
+        "primary": { "type": "boolean" }
+      }
+    }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "maxLength": 40 },
+        "suffix": { "type": "string", "maxLength": 40 },
+        "year": { "type": "integer", "minimum": 2000, "maximum": 2100 }
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z]{2}$" },
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "defaultLanguage": { "type": "string", "pattern": "^[a-z]{2}$" },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "github": { "$ref": "#/$defs/url" },
+        "donate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["label", "url"],
+          "properties": {
+            "label": { "type": "string", "maxLength": 40 },
+            "url": { "$ref": "#/$defs/url" }
+          }
+        }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/text" }
+    },
+    "marquee": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 40 },
+      "maxItems": 30
+    },
+    "principles": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "text"],
+        "properties": {
+          "title": { "$ref": "#/$defs/text" },
+          "text": { "$ref": "#/$defs/text" }
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "status", "description"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]{1,40}$" },
+          "name": { "type": "string", "maxLength": 60 },
+          "status": { "enum": ["released", "development", "archived"] },
+          "tagline": { "$ref": "#/$defs/text" },
+          "description": { "$ref": "#/$defs/text" },
+          "specs": {
+            "type": "array",
+            "maxItems": 12,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label", "value"],
+              "properties": {
+                "label": { "$ref": "#/$defs/text" },
+                "value": { "$ref": "#/$defs/text" }
+              }
+            }
+          },
+          "links": {
+            "type": "array",
+            "maxItems": 8,
+            "items": { "$ref": "#/$defs/link" }
+          }
+        }
+      }
+    },
+    "team": {
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "role"],
+        "properties": {
+          "name": { "type": "string", "maxLength": 60 },
+          "role": { "$ref": "#/$defs/text" },
+          "url": { "$ref": "#/$defs/url" }
+        }
+      }
+    }
+  }
+}
