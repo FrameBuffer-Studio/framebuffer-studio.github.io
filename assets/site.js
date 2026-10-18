@@ -270,7 +270,7 @@ function isConfig(value) {
 }
 
 async function start() {
-  const response = await fetch("./studio.json", { credentials: "same-origin" });
+  const response = await fetch("./studio.json", { credentials: "same-origin", cache: "no-cache" });
   const config = await response.json();
   if (!response.ok || !isConfig(config)) {
     throw new Error("studio.json is missing or invalid");
